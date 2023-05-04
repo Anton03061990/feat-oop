@@ -20,7 +20,7 @@ class Character {
   
     damage(points) {
       if (this.health === 0) {
-        return;
+        throw new Error("нельзя повысить левел умершего");
       }
   
       this.health -= points * (1 - this.defence / 100);
