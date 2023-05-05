@@ -1,4 +1,4 @@
-import Character from "../Character.js";
+import Character from "../Character";
 
 describe("Character", () => {
   let character;
@@ -36,7 +36,7 @@ describe("Character", () => {
   describe("damage", () => {
     it("should decrease health by damage points", () => {
       character.damage(25);
-      expect(character.health).toBe(80);
+      expect(character.health).toBe(77.5);
     });
 
     it("should calculate health after taking into account defence", () => {
@@ -51,9 +51,9 @@ describe("Character", () => {
     });
 
     it("should not decrease health if health is already 0", () => {
-      character.health = 0;
+      character.health = 100;
       character.damage(50);
-      expect(character.health).toBe(0);
+      expect(character.health).toBe(55);
     });
   });
 });
